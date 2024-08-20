@@ -11,3 +11,7 @@
 - It's where I can get the emails and the files, not the ideal maybe some adjustments (like get the emails and files from a sheet (maybe using Google Sheets API), and maybe get the files from another method instead of the path).
 #### `email-bot/send-code.py`
 - The code written automatically by the bot.py file.
+
+# How to run
+- To run the code, firstly install the requirements by going to the terminal of your code software or cmd and type `pip install requirements.txt`.
+- Then, run `bot.py` and be happy.
