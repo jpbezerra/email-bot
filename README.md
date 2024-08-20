@@ -1,5 +1,5 @@
 # About the Repository
-- This repository is for an email generator. This email generator is based on a dictionary, which the keys are the emails and the values it's the paths to files that will be sent.
+- This repository is for an email generator. This email generator is based on a dictionary, which the keys are the emails and the values are the paths of files that will be sent.
 - Each email address will receive the wanted code (with a description on the email itself) and the code that the bot is using to send his code.
 
 # Files/Folders
