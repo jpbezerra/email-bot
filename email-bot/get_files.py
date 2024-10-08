@@ -16,6 +16,7 @@
 
 # Example:
 
+# change to the real emails and paths
 my_dict = {
     "emailName1@emailOrg.com" : "filePath1",
     "emailName2@emailOrg.com" : "filePath2",
