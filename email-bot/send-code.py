@@ -1,9 +1,10 @@
 import pyautogui as bot
+import time
+
 from get_files import my_dict
-import os
 
 # tempo entre comandos
-bot.PAUSE = 2
+bot.PAUSE = 0.8
 
 # alerta para o usuário
 bot.alert("Olá! Não mexa no computador enquanto eu envio os emails!")
@@ -20,7 +21,7 @@ bot.typewrite("mail.google.com")
 bot.press('enter')
 
 for keys, values in my_dict.items():
-    bot.PAUSE = 1
+    time.sleep(1)
 
     # movendo o cursor para escrever um email
     bot.moveTo(x=150, y=250)
@@ -34,8 +35,6 @@ for keys, values in my_dict.items():
     values = values.split("\\")
     bot.press('tab')
     bot.typewrite(f"Enviando o codigo sobre {" ".join(values[-1].split('.')[0].split('_')).capitalize()} pelo pyautogui!")
-
-    bot.PAUSE = 0.75
 
     # enviando 2 arquivos para cada email (o solicitado e o arquivo ao qual eu fiz para mandar os emails)
     for i in range(2):
@@ -77,13 +76,7 @@ for keys, values in my_dict.items():
         # movendo o cursor para o arquivo
         bot.moveTo(x=1792, y=200)
 
-        # # dando mais tempo para anexar o arquivo
-        # bot.PAUSE = 3.5
-
         bot.doubleClick()
-
-    # resetando o tempo entre comandos
-    bot.PAUSE = 0.75
 
     # enviando o arquivo
     bot.moveTo(x=1220, y=981)

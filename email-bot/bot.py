@@ -1,16 +1,19 @@
 import pyautogui as bot
+import time
+
 from get_files import my_dict
+
 import os
 
-file = open("C:\\Users\\jplim\\Documents\\Programação\\Python\\estudos\\bot.py", "r")
-new_file = os.path.join("C:\\Users\\jplim\\Documents\\Programação\\Python\\estudos", "send-code.py")
+file = open(f"{os.path.dirname(__file__)}\\bot.py", "r")
+new_file = os.path.join(os.path.dirname(__file__), "send-code.py")
 maximized = False
 
 with open(new_file, "w") as nf:
     curr_line = 1
 
     for content in file:
-        if not(curr_line >= 4 and curr_line <= 18):
+        if not(22 >= curr_line >= 6):
             nf.write(content)
 
         curr_line += 1
@@ -18,7 +21,7 @@ with open(new_file, "w") as nf:
 file.close()
 
 # tempo entre comandos
-bot.PAUSE = 2
+bot.PAUSE = 0.8
 
 # alerta para o usuário
 bot.alert("Olá! Não mexa no computador enquanto eu envio os emails!")
@@ -35,8 +38,7 @@ bot.typewrite("mail.google.com")
 bot.press('enter')
 
 for keys, values in my_dict.items():
-    # alterando o pause
-    bot.PAUSE = 1
+    time.sleep(1)
 
     # movendo o cursor para escrever um email
     bot.moveTo(x=150, y=250)
@@ -50,9 +52,6 @@ for keys, values in my_dict.items():
     values = values.split("\\")
     bot.press('tab')
     bot.typewrite(f"Enviando o codigo sobre {" ".join(values[-1].split('.')[0].split('_')).capitalize()} pelo pyautogui!")
-
-    # alterando o pause
-    bot.PAUSE = 0.75
 
     # enviando 2 arquivos para cada email (o solicitado e o arquivo ao qual eu fiz para mandar os emails)
     for i in range(2):

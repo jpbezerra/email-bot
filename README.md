@@ -13,5 +13,5 @@
 - The code written automatically by the bot.py file.
 
 # How to run
-- To run the code, firstly install the requirements by going to the terminal of your code software or cmd and type `pip install requirements.txt`.
+- To run the code, firstly install the requirements by going to the terminal of your code software or cmd and type `pip install -r requirements.txt`.
 - Then, run `bot.py` and be happy.
